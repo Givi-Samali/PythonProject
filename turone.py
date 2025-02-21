@@ -1,15 +1,8 @@
 import sys
 import sqlite3
 import os.path
-# 1 - help
-# 2 - create
-# 3 - list
-# 4 - add
-# 5 - update
-# 6 - del
 
 command = sys.argv[1:]
-
 
 def hlp(com):
     helps = {
@@ -43,9 +36,6 @@ def crt():
     if not os.path.isfile("data.db"):
         conn = sqlite3.connect("data.db")
         cur = conn.cursor()
-        # section ID Number
-        # schedule ID Day NumberId ListClass
-        # cadets ID FirstName MiddleName LastName Rank SectionId
         cur.execute("CREATE TABLE section (id INTEGER PRIMARY KEY AUTOINCREMENT, number STRING)")
         cur.execute("CREATE TABLE schedule (id INTEGER PRIMARY KEY AUTOINCREMENT, day STRING, number STRING, list STRING)")
         cur.execute("CREATE TABLE cadets (id INTEGER PRIMARY KEY AUTOINCREMENT, first STRING, middle STRING, last STRING,"
@@ -109,7 +99,6 @@ def cdt(com):
     else:
         print("Unknown command!")
 
-#
 def main(com):
     if "help" in com:
         if len(com) <= 2:
