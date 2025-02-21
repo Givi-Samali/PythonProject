@@ -3,7 +3,7 @@ import sqlite3
 import os.path
 
 command = sys.argv[1:]
-
+#Hi
 def hlp(com):
     helps = {
         'help' : "Commands:\n- help -\n- create -\n- list -\n- add -\n- update -\n- del -\n- section -\n- schedule -\n- cadet -",
